@@ -1,0 +1,13 @@
+Q.4. Write a program in JS to check whether a number is prime or not?
+solution:
+let checkEvenOrOdd = (number) => {
+    if(number%2===0)process.stdout.write("number is even\n");
+    else process.stdout.write("number is odd\n");
+    
+    
+}
+
+checkEvenOrOdd(7);
+checkEvenOrOdd(6);
+checkEvenOrOdd(50);
+checkEvenOrOdd(63);

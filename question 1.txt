@@ -1,0 +1,16 @@
+Q.1. Read the local directory and list all file names in it using JS.?
+
+const fs = require('fs');
+
+fs.readdir('.', (err, files) => {
+  if (err) {
+    console.log(`Error reading directory: ${err}`);
+  } else {
+    console.log('Files in current directory:');
+    files.forEach((file) => {
+      console.log(file);
+    });
+  }
+});
+
+//This code uses the built-in fs module in Node.js to read the contents of the current directory (.) and retrieve an array of filenames.

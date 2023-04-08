@@ -1,0 +1,59 @@
+Q.2. Given these 2 schemas, loop thru each student and show its time entries.
+var WorksnapsTimeEntry = BaseSchema.extend({
+student: {
+type: Schema.ObjectId,
+ref: 'Student'
+},
+Time entries: {
+type: Object
+}
+});
+var StudentSchema = BaseSchema.extend({
+firstName: {
+type: String,
+trim: true,
+default: ''
+// validate: [validateLocalStrategyProperty, 'Please fill in your first name']
+},
+lastName: {
+type: String,
+trim: true,
+default: ''
+// validate: [validateLocalStrategyProperty, 'Please fill in your last name']
+},
+displayName: {
+type: String,
+trim: true
+},
+municipality: {
+type: String
+}
+});
+
+
+
+
+solution : 
+const WorksnapsTimeEntryModel = mongoose.model('WorksnapsTimeEntry', WorksnapsTimeEntry);
+const StudentModel = mongoose.model('Student', StudentSchema);
+
+ Find all students and populate their time entries
+StudentModel.find().populate('Time entries').exec((err, students) = {
+  if (err) {
+    console.error(err);
+    return;
+  }
+
+   Loop through each student and show their time entries
+  students.forEach((student) = {
+    console.log(`Student ${student.firstName} ${student.lastName}`);
+    console.log('Time entries');
+    student.Time entries.forEach((timeEntry) = {
+      console.log(`- ${timeEntry}`);
+    });
+  });
+});
+
+// Assuming that you have access to a database instance that has these schemas registered as models, you can use Mongoose to query the database and loop through each student to show its time entries.
+
+// In the code above, we first register the models with Mongoose and then use the populate() method to populate each student's Time entries field with the corresponding WorksnapsTimeEntry documents. We then loop through each student and their time entries to print them to the console.

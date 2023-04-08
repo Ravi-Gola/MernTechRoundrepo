@@ -1,0 +1,5 @@
+Q.3. Design a web page using react/html/css/js:
+https://file.mockplus.com/image/2019/05/602ba7d7-2716-485a-bd30-a36a3402fc94.png.
+ 
+solution: host on  -> https://react-form-page-question-3.netlify.app/
+          git repo -> https://github.com/Ravi-Gola/MernTechRoundQustion3-reactformpage
